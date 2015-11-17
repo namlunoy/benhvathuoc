@@ -288,7 +288,7 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\conghoang\Documents\Corona Projects\slideview-107212\Trunk\SlideView\SlideView.Library.WP8\SlideView.Library.WP8.csproj">
+    <ProjectReference Include="..\SlideView.Library.WP8\SlideView.Library.WP8.csproj">
       <Project>{73e993b6-f814-4cdd-a9d9-ff64bd2f9776}</Project>
       <Name>SlideView.Library.WP8</Name>
     </ProjectReference>
