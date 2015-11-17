@@ -28,6 +28,7 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <DefaultLanguage>en-US</DefaultLanguage>
     <NuGetPackageImportStamp>ff1c50e8</NuGetPackageImportStamp>
+    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -114,6 +115,38 @@
     </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="ViewModels\Menu.cs" />
+    <Compile Include="Views\BasePage.xaml.cs">
+      <DependentUpon>BasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageChiTietBaiBao.xaml.cs">
+      <DependentUpon>PageChiTietBaiBao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageChiTietBenh.xaml.cs">
+      <DependentUpon>PageChiTietBenh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyMenuItem.xaml.cs">
+      <DependentUpon>MyMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageChiTietThuoc.xaml.cs">
+      <DependentUpon>PageChiTietThuoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageKetQua.xaml.cs">
+      <DependentUpon>PageKetQua.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageTimKiem.xaml.cs">
+      <DependentUpon>PageTimKiem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageTinTucSucKhoe.xaml.cs">
+      <DependentUpon>PageTinTucSucKhoe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageTraCuuBenh.xaml.cs">
+      <DependentUpon>PageTraCuuBenh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageTraCuuThuoc.xaml.cs">
+      <DependentUpon>PageTraCuuThuoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_Others\PageType.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -124,6 +157,46 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageChiTietBaiBao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageChiTietBenh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyMenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageChiTietThuoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageKetQua.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageTimKiem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageTinTucSucKhoe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageTraCuuBenh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageTraCuuThuoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -131,9 +204,32 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\feature.search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\icons\ic_bacsi.png" />
+    <Content Include="Assets\icons\ic_benh.png" />
+    <Content Include="Assets\icons\ic_congcu.png" />
+    <Content Include="Assets\icons\ic_cross.png" />
+    <Content Include="Assets\icons\ic_cross2.png" />
+    <Content Include="Assets\icons\ic_cross3.png" />
+    <Content Include="Assets\icons\ic_home.png" />
+    <Content Include="Assets\icons\ic_nhathuoc.png" />
+    <Content Include="Assets\icons\ic_pill.png" />
+    <Content Include="Assets\icons\ic_thuoc.png" />
+    <Content Include="Assets\icons\ic_tintuc.png" />
     <Content Include="data.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -180,13 +276,22 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Sqlite">
       <HintPath>..\packages\sqlite-net-wp8.3.8.5\lib\windowsphone8\Sqlite.winmd</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\conghoang\Documents\Corona Projects\slideview-107212\Trunk\SlideView\SlideView.Library.WP8\SlideView.Library.WP8.csproj">
+      <Project>{73e993b6-f814-4cdd-a9d9-ff64bd2f9776}</Project>
+      <Name>SlideView.Library.WP8</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

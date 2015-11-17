@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace BenhVaThuoc.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Thuoc : IItem
     {
         [SQLite.Column("id")]
