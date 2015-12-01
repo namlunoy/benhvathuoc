@@ -22,6 +22,7 @@ namespace BenhVaThuoc.Views
         void TraCuuBenh_Loaded(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("TraCuuBenh_Loaded");
+            //sdfsdfsdf
         }
 
         private void Click_ChiTietBenh(object sender, RoutedEventArgs e)
