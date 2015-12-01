@@ -10,8 +10,12 @@
     d:DesignHeight="800" d:DesignWidth="480">
     
     <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Tra cứu bệnh" />
-        <Button Content="Chi tiết bệnh" Click="Click_ChiTietBenh" HorizontalAlignment="Left" Margin="183,178,0,0" VerticalAlignment="Top"/>
-
+        <ListBox Name="listbox" SelectionChanged="ClickVaoNhomBenh">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock  Text="{Binding Ten}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

@@ -8,11 +8,14 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Diagnostics;
+using BenhVaThuoc.Database;
+using BenhVaThuoc.Models;
 
 namespace BenhVaThuoc.Views
 {
     public partial class PageTraCuuBenh : UserControl
     {
+        private List<NhomBenh> listNhomBenh;
         public PageTraCuuBenh()
         {
             InitializeComponent();
@@ -22,12 +25,17 @@ namespace BenhVaThuoc.Views
         void TraCuuBenh_Loaded(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("TraCuuBenh_Loaded");
-            //sdfsdfsdf
+            listNhomBenh = MyDB.Instance.Conn.Query<NhomBenh>("select * from benh_category");
+            listbox.ItemsSource = listNhomBenh;
         }
 
-        private void Click_ChiTietBenh(object sender, RoutedEventArgs e)
+
+
+        private void ClickVaoNhomBenh(object sender, SelectionChangedEventArgs e)
         {
-            MainPage.Current.ShowChildViewNext(this, new PageChiTietBenh());
+            NhomBenh nhom = listbox.SelectedItem as NhomBenh;
+            if (nhom != null)
+                MainPage.Current.ShowChildViewNext(this, new PageChiTietBenh(nhom));
         }
     }
 }

@@ -23,18 +23,19 @@ namespace BenhVaThuoc.Database
                 return _instance;
             }
         }
-        private SQLiteConnection conn;
+        private SQLiteConnection _conn;
+        public SQLiteConnection Conn { get { return _conn; } }
 
         private MyDB()
         {
             Debug.WriteLine("MyDB()");
-            conn = new SQLiteConnection(FILE_NAME);
+            _conn = new SQLiteConnection(FILE_NAME);
         }
 
 
         public List<NhomBenh> GetListNhomBenh()
         {
-            List<NhomBenh> list = conn.Query<NhomBenh>("select * from benh_category");
+            List<NhomBenh> list = _conn.Query<NhomBenh>("select * from benh_category");
            
             return list;
         }

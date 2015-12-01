@@ -7,14 +7,22 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using BenhVaThuoc.Models;
 
 namespace BenhVaThuoc.Views
 {
     public partial class PageChiTietBenh : UserControl
     {
-        public PageChiTietBenh()
+        public List<Benh> listBenh;
+        public PageChiTietBenh(NhomBenh nhomBenh)
         {
             InitializeComponent();
+            Loaded += PageChiTietBenh_Loaded;
+        }
+
+        void PageChiTietBenh_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
