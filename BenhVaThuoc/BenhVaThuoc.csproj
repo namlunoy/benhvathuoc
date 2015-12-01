@@ -125,6 +125,9 @@
     <Compile Include="Views\PageChiTietBenh.xaml.cs">
       <DependentUpon>PageChiTietBenh.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PageDanhSachBenh.xaml.cs">
+      <DependentUpon>PageDanhSachBenh.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MyMenuItem.xaml.cs">
       <DependentUpon>MyMenuItem.xaml</DependentUpon>
     </Compile>
@@ -140,8 +143,8 @@
     <Compile Include="Views\PageTinTucSucKhoe.xaml.cs">
       <DependentUpon>PageTinTucSucKhoe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PageTraCuuBenh.xaml.cs">
-      <DependentUpon>PageTraCuuBenh.xaml</DependentUpon>
+    <Compile Include="Views\PageNhomBenh.xaml.cs">
+      <DependentUpon>PageNhomBenh.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PageTraCuuThuoc.xaml.cs">
       <DependentUpon>PageTraCuuThuoc.xaml</DependentUpon>
@@ -169,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PageDanhSachBenh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MyMenuItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,7 +196,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PageTraCuuBenh.xaml">
+    <Page Include="Views\PageNhomBenh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

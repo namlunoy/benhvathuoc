@@ -21,7 +21,7 @@ namespace BenhVaThuoc
         public static MainPage Current { private set; get; }
         private Stack<UIElement> stack = new Stack<UIElement>();
         private PageTinTucSucKhoe tinTucPage;
-        private PageTraCuuBenh traCuuBenhPage;
+        private PageNhomBenh traCuuBenhPage;
 
 
         /// <summary>
@@ -40,13 +40,13 @@ namespace BenhVaThuoc
         {
             Current = this;
 
-            traCuuBenhPage = new PageTraCuuBenh();
+            traCuuBenhPage = new PageNhomBenh();
             tinTucPage = new PageTinTucSucKhoe();
 
             MyDB.DBFileIsReady += MyDB_DBFileIsReady;
             InitializeComponent();
             MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tin Tức", View = new PageTinTucSucKhoe(), ImageUri = new Uri(@"/Assets/icons/ic_tintuc.png", UriKind.Relative) }));
-            MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tra Cứu Bệnh", View = new PageTraCuuBenh(), ImageUri = new Uri(@"/Assets/icons/ic_benh.png", UriKind.Relative) }));
+            MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tra Cứu Bệnh", View = new PageNhomBenh(), ImageUri = new Uri(@"/Assets/icons/ic_benh.png", UriKind.Relative) }));
             MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tra Cứu Thuốc", View = new PageTraCuuThuoc(), ImageUri = new Uri(@"/Assets/icons/ic_thuoc.png", UriKind.Relative) }));
             MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tìm kiếm", View = new PageTimKiem(), ImageUri = new Uri(@"/Assets/AppBar/feature.search.png", UriKind.Relative) }));
         }

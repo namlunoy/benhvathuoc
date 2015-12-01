@@ -13,10 +13,10 @@ using BenhVaThuoc.Models;
 
 namespace BenhVaThuoc.Views
 {
-    public partial class PageTraCuuBenh : UserControl
+    public partial class PageNhomBenh : UserControl
     {
         private List<NhomBenh> listNhomBenh;
-        public PageTraCuuBenh()
+        public PageNhomBenh()
         {
             InitializeComponent();
             Loaded += TraCuuBenh_Loaded;
@@ -35,7 +35,7 @@ namespace BenhVaThuoc.Views
         {
             NhomBenh nhom = listbox.SelectedItem as NhomBenh;
             if (nhom != null)
-                MainPage.Current.ShowChildViewNext(this, new PageChiTietBenh(nhom));
+                MainPage.Current.ShowChildViewNext(this, new PageDanhSachBenh(nhom));
         }
     }
 }

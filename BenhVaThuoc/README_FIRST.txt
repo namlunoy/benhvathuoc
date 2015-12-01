@@ -16,3 +16,7 @@ b. Load dữ liệu có thể để vào hàm tạo hoặc đệ vào trong sự
 
 c. Cách chuyển trang
   MainPage.Current.ShowChildViewNext(this, new PageChiTietBenh());	
+
+d. Khi add trang mới
+- Add UserControl
+- Chỉnh:     d:DesignHeight="800" d:DesignWidth="480">

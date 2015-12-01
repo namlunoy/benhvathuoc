@@ -13,16 +13,17 @@ namespace BenhVaThuoc.Views
 {
     public partial class PageChiTietBenh : UserControl
     {
-        public List<Benh> listBenh;
-        public PageChiTietBenh(NhomBenh nhomBenh)
+        Benh benh;
+        public PageChiTietBenh(Benh benh)
         {
             InitializeComponent();
             Loaded += PageChiTietBenh_Loaded;
+            this.benh = benh;
         }
 
         void PageChiTietBenh_Loaded(object sender, RoutedEventArgs e)
         {
-
+            txt.Text = benh.NoiDung;
         }
     }
 }
