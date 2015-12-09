@@ -31,14 +31,17 @@ namespace BenhVaThuoc.Views
 
         private void DownloadStringCallback(object sender, DownloadStringCompletedEventArgs e)
         {
-            //string text = e.Result;
-            //System.Diagnostics.Debugger.Break();
-            if (!e.Cancelled && e.Error == null)
+            if (e.Error == null)
             {
-                string textString = (string)e.Result;
-
-                Console.WriteLine(textString);
+                var reader = new System.IO.StreamReader(e.Result);
+                Debug.WriteLine(reader.ReadToEnd());
+                reader.Close();
             }
+            else
+            {
+                // Handle error here  
+                Debug.WriteLine(e.Error);
+            }  
         }
 
 
