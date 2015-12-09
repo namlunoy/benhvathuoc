@@ -32,7 +32,13 @@ namespace BenhVaThuoc.Views
         private void DownloadStringCallback(object sender, DownloadStringCompletedEventArgs e)
         {
             //string text = e.Result;
-            System.Diagnostics.Debugger.Break();
+            //System.Diagnostics.Debugger.Break();
+            if (!e.Cancelled && e.Error == null)
+            {
+                string textString = (string)e.Result;
+
+                Console.WriteLine(textString);
+            }
         }
 
 
