@@ -9,6 +9,9 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Diagnostics;
 using System.IO;
+using webservice;
+using System.Xml.Serialization;
+using System.Text;
 
 namespace BenhVaThuoc.Views
 {
@@ -17,65 +20,119 @@ namespace BenhVaThuoc.Views
         public PageTinTucSucKhoe()
         {
             InitializeComponent();
-            //Loaded += TinTucSucKhoe_Loaded;
-            UseWebClient("http://vnexpress.net/rss/suc-khoe.rss");
+            GetFileAsString();
         }
 
-        private void UseWebClient(string address)
+        private void GetFileAsString()
         {
-            WebClient client = new WebClient();
-            Uri uri = new Uri(address);
-            client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadStringCallback);
-            client.DownloadStringAsync(uri);
-        }
-
-        private void DownloadStringCallback(object sender, DownloadStringCompletedEventArgs e)
-        {
-            if (e.Error == null)
+            var stringClient = new WebClient();
+            stringClient.DownloadStringCompleted += (sender, e) =>
             {
-                var reader = new System.IO.StreamReader(e.Result);
-                Debug.WriteLine(reader.ReadToEnd());
-                reader.Close();
-            }
-            else
-            {
-                // Handle error here  
-                Debug.WriteLine(e.Error);
-            }  
+                //XmlDeserialize();
+                var item = GetListItem(e.Result);
+                Dispatcher.BeginInvoke(() =>
+                {
+                    listItem.DataContext = item;
+                });
+            };
+            // Start download  
+            stringClient.DownloadStringAsync(new Uri("http://vnexpress.net/rss/suc-khoe.rss"));
         }
-
-
-        //void TinTucSucKhoe_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    Debug.WriteLine("TinTucSucKhoe_Loaded");
-        //}
-
-        //private void Click_XemChiTiet(object sender, RoutedEventArgs e)
-        //{
-        //    MainPage.Current.ShowChildViewNext(this, new PageChiTietBaiBao());
-        //}
-        //private void tile_Tap()
-        //{
-        //    WebClient wc = new WebClient();
-        //    wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
-
-        //    wc.OpenReadAsync(new Uri("http://vnexpress.net/rss/suc-khoe.rss"));
-        //}
-
-        //void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        StreamReader s = new StreamReader(e.Result);
-        //        string r = s.ReadToEnd();
-        //        MessageBox.Show(r);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
         
-       
+        private static List<Item> GetListItem(string json)
+        {
+            List<Item> listitem = null;
+            var serializer = new XmlSerializer(typeof(Rss));
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            var rss = serializer.Deserialize(stream) as Rss;
+            if (rss.Channel != null)
+            {
+                listitem = (from item in rss.Channel.item
+                            select new Item
+                            {
+                                Title = item.Title,
+                                Description = Substring(item.Description),
+                                PubDate = SubDate(item.PubDate),
+                                Uri = SubUri(item.Description),
+                                Comments = (item.Comments),
+                                Link = item.Link
+                            }).ToList();
+            }
+            return listitem;
+        }
+
+        public static string Substring(String input)
+        {
+            String searchString1 = "</br>";
+            int startIndex = input.IndexOf(searchString1);
+            input = input.Substring(startIndex + searchString1.Length);
+            String searchString2 = "]]>";
+            int endIndex = input.IndexOf(searchString2);
+            if (endIndex > 0)
+                input = input.Substring(0, endIndex);
+            return input;
+        }
+        public static string SubUri(String input)
+        {
+            String searchString = "http://img.";
+            int startIndex = input.IndexOf(searchString);
+            input = input.Substring(startIndex);
+
+            String searchString1 = "jpg";
+            String searchString2 = "png";
+            String searchString3 = "jpeg";
+            int endIndex1 = input.IndexOf(searchString1);
+            int endIndex2 = input.IndexOf(searchString2);
+            int endIndex3 = input.IndexOf(searchString3);
+
+            if (endIndex1 > 0)
+            {
+                input = input.Substring(0, endIndex1 + searchString1.Length);
+            }
+            if (endIndex2 > 0)
+            {
+                input = input.Substring(0, endIndex2 + searchString2.Length);
+            }
+            if (endIndex3 > 0)
+            {
+                input = input.Substring(0, endIndex3 + searchString3.Length);
+            }
+            return input;
+        }
+        public static string SubDate(String input)
+        {
+            String searchString1 = "<pubDate>";
+            int startIndex = input.IndexOf(searchString1);
+            input = input.Substring(startIndex + searchString1.Length);
+            String searchString2 = "</pubDate>";
+            int endIndex = input.IndexOf(searchString2);
+            if (endIndex > 0)
+                input = input.Substring(0, endIndex);
+            return input;
+        }
+        //public static string SubComment(String input)
+        //{
+        //    String searchString1 = "<slash:comments>";
+        //    int startIndex = input.IndexOf(searchString1);
+        //    input = input.Substring(startIndex + searchString1.Length);
+        //    String searchString2 = "</slash:comments>";
+        //    int endIndex = input.IndexOf(searchString2);
+        //    if (endIndex > 0)
+        //        input = input.Substring(0, endIndex);
+        //    return input;
+        //}
+        public static Item SelectedItem;
+        private void ClickItem(object sender, SelectionChangedEventArgs e)
+        {
+            SelectedItem = listItem.SelectedItem as Item;
+            MainPage.Current.ShowChildViewNext(this, new PageChiTietBaiBao());
+        }
+
+        private void ImageClick_Click(object sender, RoutedEventArgs e)
+        {
+            //if (listItem.VerticalAlignment >= 0) listItem.ScrollToVerticalOffset(listItem.VerticalOffset - 5); 
+            
+        }
+
     }
 }

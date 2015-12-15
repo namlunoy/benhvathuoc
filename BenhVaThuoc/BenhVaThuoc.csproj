@@ -107,6 +107,7 @@
     <Compile Include="Models\NhomBenh.cs" />
     <Compile Include="Models\NhomThuoc.cs" />
     <Compile Include="Models\Thuoc.cs" />
+    <Compile Include="Models\XMlSerialization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -217,6 +218,7 @@
     <Content Include="Assets\AppBar\feature.search.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\comment.png" />
     <Content Include="Assets\icons\ic_bacsi.png" />
     <Content Include="Assets\icons\ic_benh.png" />
     <Content Include="Assets\icons\ic_congcu.png" />
@@ -228,6 +230,8 @@
     <Content Include="Assets\icons\ic_pill.png" />
     <Content Include="Assets\icons\ic_thuoc.png" />
     <Content Include="Assets\icons\ic_tintuc.png" />
+    <Content Include="Assets\suckhoe.png" />
+    <Content Include="Assets\vnexpress.png" />
     <Content Include="data.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

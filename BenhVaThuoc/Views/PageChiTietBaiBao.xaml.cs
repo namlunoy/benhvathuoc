@@ -15,6 +15,7 @@ namespace BenhVaThuoc.Views
         public PageChiTietBaiBao()
         {
             InitializeComponent();
+            webBrowser.Navigate(new Uri(PageTinTucSucKhoe.SelectedItem.Link, UriKind.Absolute));
         }
     }
 }
