@@ -21,24 +21,24 @@ namespace BenhVaThuoc.Views
         {
             InitializeComponent();
             GetFileAsString();
+
         }
+
+
 
         private void GetFileAsString()
         {
-            var stringClient = new WebClient();
-            stringClient.DownloadStringCompleted += (sender, e) =>
-            {
-                //XmlDeserialize();
-                var item = GetListItem(e.Result);
-                Dispatcher.BeginInvoke(() =>
-                {
-                    listItem.DataContext = item;
-                });
-            };
-            // Start download  
-            stringClient.DownloadStringAsync(new Uri("http://vnexpress.net/rss/suc-khoe.rss"));
+            WebClient web = new WebClient();
+            web.DownloadStringCompleted += downloadXong;
+            web.DownloadStringAsync(new Uri("http://vnexpress.net/rss/suc-khoe.rss"));
         }
-        
+
+        void downloadXong(object sender, DownloadStringCompletedEventArgs e)
+        {
+            var item = GetListItem(e.Result);
+            listItem.DataContext = item;
+        }
+
         private static List<Item> GetListItem(string json)
         {
             List<Item> listitem = null;
@@ -131,7 +131,7 @@ namespace BenhVaThuoc.Views
         private void ImageClick_Click(object sender, RoutedEventArgs e)
         {
             //if (listItem.VerticalAlignment >= 0) listItem.ScrollToVerticalOffset(listItem.VerticalOffset - 5); 
-            
+
         }
 
     }
