@@ -38,6 +38,9 @@ namespace BenhVaThuoc
         #region Setup - Công stuffs
         public MainPage()
         {
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.ApplicationId = "eb17da41-a591-4332-9d10-fd9034b718dd";
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.AuthenticationToken = "0rM3uuk6FU7b-ADnSFEEfw";
+   
             Current = this;
 
             traCuuBenhPage = new PageNhomBenh();
