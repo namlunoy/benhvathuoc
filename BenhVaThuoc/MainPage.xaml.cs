@@ -50,7 +50,7 @@ namespace BenhVaThuoc
             InitializeComponent();
             MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tin Tức", View = new PageTinTucSucKhoe(), ImageUri = new Uri(@"/Assets/icons/ic_tintuc.png", UriKind.Relative) }));
             MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tra Cứu Bệnh", View = new PageNhomBenh(), ImageUri = new Uri(@"/Assets/icons/ic_benh.png", UriKind.Relative) }));
-            MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tra Cứu Thuốc", View = new PageTraCuuThuoc(), ImageUri = new Uri(@"/Assets/icons/ic_thuoc.png", UriKind.Relative) }));
+            MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tra Cứu Thuốc", View = new PageNhomThuoc(), ImageUri = new Uri(@"/Assets/icons/ic_thuoc.png", UriKind.Relative) }));
             MenuList.Items.Add(new MyMenuItem(new Menu() { Title = "Tìm kiếm", View = new PageTimKiem(), ImageUri = new Uri(@"/Assets/icons/ic_map.png", UriKind.Relative) }));
         }
         void MyDB_DBFileIsReady()

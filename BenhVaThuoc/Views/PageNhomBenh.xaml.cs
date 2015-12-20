@@ -42,7 +42,6 @@ namespace BenhVaThuoc.Views
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("TraCuuBenh_Loaded");
             String key = tbSearch.Text;
             MainPage.Current.ShowChildViewNext(this, new PageDanhSachBenh(key));
 

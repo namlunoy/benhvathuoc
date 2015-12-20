@@ -9,8 +9,30 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="800" d:DesignWidth="480">
     
-    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
-        <TextBlock Text="Chi Tiết Thuốc" HorizontalAlignment="Center" VerticalAlignment="Top"  />
-
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Border BorderBrush="#8CC54B" BorderThickness="3" CornerRadius="15">
+            <ScrollViewer>
+                <StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="10 20">
+                        <Image Source="{Binding ImgUrl}" Width="130" Height="130" ></Image>
+                        <StackPanel Margin="20 0 10 0" HorizontalAlignment="Stretch">
+                            <TextBlock Name="ten" TextWrapping="Wrap" Foreground="#8CC54B" FontSize="30" Padding="0 15" Text="{Binding Ten}"></TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="0 15 0 10">
+                                <TextBlock Text="Mã Sản Phẩm: " Margin="10 0"  Foreground="Orange"></TextBlock>
+                                <TextBlock Name="id" Text="{Binding ID}" Foreground="Orange" FontSize="20"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Thông Tin Sản Phẩm: " Foreground="#8CC54B" FontSize="30"></TextBlock>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Height="30">
+                            <TextBlock Text="Dạng bào chế: " Width="150" Foreground="Black" FontSize="20"></TextBlock>
+                            <TextBlock Text="{Binding DangBaoChe}" Foreground="Black"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        
     </Grid>
 </UserControl>

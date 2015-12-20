@@ -136,8 +136,14 @@
     <Compile Include="Views\PageChiTietThuoc.xaml.cs">
       <DependentUpon>PageChiTietThuoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PageDanhSachThuoc.xaml.cs">
+      <DependentUpon>PageDanhSachThuoc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PageKetQua.xaml.cs">
       <DependentUpon>PageKetQua.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageNhomThuoc.xaml.cs">
+      <DependentUpon>PageNhomThuoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PageTimKiem.xaml.cs">
       <DependentUpon>PageTimKiem.xaml</DependentUpon>
@@ -147,9 +153,6 @@
     </Compile>
     <Compile Include="Views\PageNhomBenh.xaml.cs">
       <DependentUpon>PageNhomBenh.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PageTraCuuThuoc.xaml.cs">
-      <DependentUpon>PageTraCuuThuoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="_Others\CoordinateConverter.cs" />
     <Compile Include="_Others\PageType.cs" />
@@ -191,9 +194,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PageDanhSachThuoc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\PageKetQua.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageNhomThuoc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PageTimKiem.xaml">
       <SubType>Designer</SubType>
@@ -204,10 +215,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PageNhomBenh.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\PageTraCuuThuoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,8 +247,15 @@
     <Content Include="Assets\icons\ic_thuoc.png" />
     <Content Include="Assets\icons\ic_tintuc.png" />
     <Content Include="Assets\icons\nhombenh.png" />
+    <Content Include="Assets\icons\nhomthuoc2.png" />
+    <Content Include="Assets\icons\search %281%29.png" />
     <Content Include="Assets\icons\search.png" />
+    <Content Include="Assets\icons\search2.png" />
+    <Content Include="Assets\icons\search3.png" />
+    <Content Include="Assets\icons\search4.png" />
     <Content Include="Assets\icons\search_press.png" />
+    <Content Include="Assets\icons\th.jpg" />
+    <Content Include="Assets\icons\thuoc.jpg" />
     <Content Include="Assets\suckhoe.png" />
     <Content Include="Assets\vnexpress.png" />
     <Content Include="data.db">
