@@ -2,18 +2,30 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="800" d:DesignWidth="480">
-    
-    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
-        <ListBox Name="listbox" SelectionChanged="ClickVaoBenh">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <StackPanel Background="White" VerticalAlignment="Top" Style="{StaticResource border_out_Search_NB}">
+            <Border Margin="0 15"  Style="{StaticResource border_in_Search_NB}">
+                <toolkit:PhoneTextBox TextChanged="tbSearch_TextChanged" FontSize="22" Padding="0 -8 0 0"  Name="tbSearch" Hint="Enter to search" />
+            </Border>
+
+        </StackPanel>
+        <ListBox Name="listbox" SelectionChanged="ClickVaoBenh" Margin="0 110 0 0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock  Text="{Binding Ten}"/>
+                    <StackPanel Style="{StaticResource stack_style_NB}">
+                        <Image Style="{StaticResource img_item_style_NB}" Stretch="UniformToFill" Width="80" Height="80" Source="\Assets\icons\ic_dsbenh.png" />
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock  Text="{Binding Ten}" Style="{StaticResource text_style_NB}"/>
+                        </StackPanel>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

@@ -23,7 +23,7 @@ namespace BenhVaThuoc.Views
 
         void PageChiTietBenh_Loaded(object sender, RoutedEventArgs e)
         {
-            txt.Text = benh.NoiDung;
+            web_chitiet_benh.NavigateToString(benh.NoiDung);
         }
     }
 }

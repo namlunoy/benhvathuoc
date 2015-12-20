@@ -16,11 +16,20 @@ namespace BenhVaThuoc.Views
     {
         public List<Benh> listBenh;
         NhomBenh nhom;
+        private string key;
         public PageDanhSachBenh(NhomBenh nhomBenh)
         {
             InitializeComponent();
             nhom = nhomBenh;
             Loaded += PageChiTietBenh_Loaded;
+        }
+
+        public PageDanhSachBenh(string key)
+        {
+            InitializeComponent();
+            this.key = key;
+            listBenh = MyDB.Instance.Conn.Query<Benh>("select * from benh_chitiet where title like '%" + key + "%'");
+            listbox.ItemsSource = listBenh;
         }
 
         void PageChiTietBenh_Loaded(object sender, RoutedEventArgs e)
@@ -36,6 +45,22 @@ namespace BenhVaThuoc.Views
             {
                 MainPage.Current.ShowChildViewNext(this, new PageChiTietBenh(benhselected));
             }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            List<Benh> listresult = new List<Benh>();
+            listresult = listBenh.Where(c => c.Ten.Contains(tbSearch.Text)).ToList();
+            listbox.ItemsSource = null;
+            listbox.ItemsSource = listresult;
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<Benh> listresult = new List<Benh>();
+            listresult = listBenh.Where(c => c.Ten.ToLower().Contains(tbSearch.Text.ToLower())).ToList();
+            listbox.ItemsSource = null;
+            listbox.ItemsSource = listresult;
         }
     }
 }

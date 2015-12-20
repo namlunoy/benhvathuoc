@@ -7,7 +7,13 @@
 
     <!--Application Resources-->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:BenhVaThuoc" x:Key="LocalizedStrings"/>
+        <ResourceDictionary>
+            <local:LocalizedStrings  xmlns:local="clr-namespace:BenhVaThuoc" x:Key="LocalizedStrings"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

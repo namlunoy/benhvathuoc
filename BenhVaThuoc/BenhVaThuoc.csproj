@@ -163,6 +163,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\BasePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -221,6 +225,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\comment.png" />
+    <Content Include="Assets\icons\ic_cross4.png" />
+    <Content Include="Assets\icons\ic_dsbenh.png" />
     <Content Include="Assets\icons\ic_map.png" />
     <Content Include="Assets\icons\ic_bacsi.png" />
     <Content Include="Assets\icons\ic_benh.png" />
@@ -233,6 +239,9 @@
     <Content Include="Assets\icons\ic_pill.png" />
     <Content Include="Assets\icons\ic_thuoc.png" />
     <Content Include="Assets\icons\ic_tintuc.png" />
+    <Content Include="Assets\icons\nhombenh.png" />
+    <Content Include="Assets\icons\search.png" />
+    <Content Include="Assets\icons\search_press.png" />
     <Content Include="Assets\suckhoe.png" />
     <Content Include="Assets\vnexpress.png" />
     <Content Include="data.db">

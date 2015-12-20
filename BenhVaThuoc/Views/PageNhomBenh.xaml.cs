@@ -10,6 +10,8 @@ using Microsoft.Phone.Shell;
 using System.Diagnostics;
 using BenhVaThuoc.Database;
 using BenhVaThuoc.Models;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace BenhVaThuoc.Views
 {
@@ -36,6 +38,14 @@ namespace BenhVaThuoc.Views
             NhomBenh nhom = listbox.SelectedItem as NhomBenh;
             if (nhom != null)
                 MainPage.Current.ShowChildViewNext(this, new PageDanhSachBenh(nhom));
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("TraCuuBenh_Loaded");
+            String key = tbSearch.Text;
+            MainPage.Current.ShowChildViewNext(this, new PageDanhSachBenh(key));
+
         }
     }
 }
