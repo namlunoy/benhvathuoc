@@ -69,6 +69,7 @@ namespace BenhVaThuoc.Views
             WebClient clien = new WebClient();
             clien.DownloadStringCompleted += clien_DownloadStringCompleted;
             clien.DownloadStringAsync(new Uri(url));
+
             Debug.WriteLine("url : " + url);
         }
 
@@ -115,10 +116,10 @@ namespace BenhVaThuoc.Views
         {
             if (e.Error == null)
             {
-
                 Debug.WriteLine("Resouce: "+e.Result);
 
                 RootObject root = JsonConvert.DeserializeObject<RootObject>(e.Result);
+
                 foreach (var item in root.results)
                 {
                     Debug.WriteLine(item.geometry.location.lat);

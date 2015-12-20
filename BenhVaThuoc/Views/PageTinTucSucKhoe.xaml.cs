@@ -39,26 +39,32 @@ namespace BenhVaThuoc.Views
             listItem.DataContext = item;
         }
 
-        private static List<Item> GetListItem(string json)
+        private static List<Item> GetListItem(string xml)
         {
             List<Item> listitem = null;
+
             var serializer = new XmlSerializer(typeof(Rss));
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(xml));
             var rss = serializer.Deserialize(stream) as Rss;
-            if (rss.Channel != null)
-            {
-                listitem = (from item in rss.Channel.item
-                            select new Item
-                            {
-                                Title = item.Title,
-                                Description = Substring(item.Description),
-                                PubDate = SubDate(item.PubDate),
-                                Uri = SubUri(item.Description),
-                                Comments = (item.Comments),
-                                Link = item.Link
-                            }).ToList();
-            }
-            return listitem;
+
+            //if (rss.Channel != null)
+            //{
+            //    listitem = (from item in rss.Channel.item
+            //                select new Item
+            //                {
+            //                    Title = item.Title,
+            //                    Description = Substring(item.Description),
+            //                    PubDate = SubDate(item.PubDate),
+            //                    Uri = SubUri(item.Description),
+            //                    Comments = (item.Comments),
+            //                    Link = item.Link
+            //                }).ToList();
+            //}
+
+            foreach (var item in rss.Channel.item)
+                item.Uri = SubUri(item.Description);
+
+            return rss.Channel.item;
         }
 
         public static string Substring(String input)
