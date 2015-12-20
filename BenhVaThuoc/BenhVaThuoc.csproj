@@ -219,6 +219,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\comment.png" />
+    <Content Include="Assets\icons\ic_map.png" />
     <Content Include="Assets\icons\ic_bacsi.png" />
     <Content Include="Assets\icons\ic_benh.png" />
     <Content Include="Assets\icons\ic_congcu.png" />
