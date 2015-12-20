@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+///kkkkkkkkkkk
 namespace BenhVaThuoc.Models
 {
     public class Benh : IItem
