@@ -105,17 +105,17 @@ namespace BenhVaThuoc.Views
             }
             return input;
         }
-        public static string SubDate(String input)
-        {
-            String searchString1 = "<pubDate>";
-            int startIndex = input.IndexOf(searchString1);
-            input = input.Substring(startIndex + searchString1.Length);
-            String searchString2 = "</pubDate>";
-            int endIndex = input.IndexOf(searchString2);
-            if (endIndex > 0)
-                input = input.Substring(0, endIndex);
-            return input;
-        }
+        //public static string SubDate(String input)
+        //{
+        //    String searchString1 = "<pubDate>";
+        //    int startIndex = input.IndexOf(searchString1);
+        //    input = input.Substring(startIndex + searchString1.Length);
+        //    String searchString2 = "</pubDate>";
+        //    int endIndex = input.IndexOf(searchString2);
+        //    if (endIndex > 0)
+        //        input = input.Substring(0, endIndex);
+        //    return input;
+        //}
         //public static string SubComment(String input)
         //{
         //    String searchString1 = "<slash:comments>";
@@ -133,12 +133,5 @@ namespace BenhVaThuoc.Views
             SelectedItem = listItem.SelectedItem as Item;
             MainPage.Current.ShowChildViewNext(this, new PageChiTietBaiBao());
         }
-
-        private void ImageClick_Click(object sender, RoutedEventArgs e)
-        {
-            //if (listItem.VerticalAlignment >= 0) listItem.ScrollToVerticalOffset(listItem.VerticalOffset - 5); 
-
-        }
-
     }
 }
