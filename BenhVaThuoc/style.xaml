@@ -57,5 +57,53 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <Setter Property="Foreground" Value="White"></Setter>
         <Setter Property="Width" Value="480"></Setter>
     </Style>
+    <Style TargetType="TextBlock" x:Key="txt_field_MSP_NSX">
+        <Setter Property="Foreground" Value="Orange"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="10 0"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="txt_MSP_NSX">
+        <Setter Property="Foreground" Value="Orange"></Setter>
+        <Setter Property="FontSize" Value="17"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="txt_field1">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="txt_fieldInfor1">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        <Setter Property="Padding" Value="5 0 0 0"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="txt_field2">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="txt_fieldInfor2">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        <Setter Property="Padding" Value="10 0 0 0"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="txt_fieldTenThuoc">
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Foreground" Value="#8CC54B"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        <Setter Property="Width" Value="260"></Setter>
+    </Style>
+
 
 </ResourceDictionary>
