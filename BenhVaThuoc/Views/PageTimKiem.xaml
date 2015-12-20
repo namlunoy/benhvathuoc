@@ -10,6 +10,6 @@
     d:DesignHeight="800" d:DesignWidth="480">
 
     <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
-        <maps:Map Center="47.6097, -122.3331" ZoomLevel="16" LandmarksEnabled="true" PedestrianFeaturesEnabled="true"/>
+        <maps:Map Name="map"/>
     </Grid>
 </UserControl>

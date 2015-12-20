@@ -98,6 +98,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Base\IItem.cs" />
+    <Compile Include="Base\ViTri.cs" />
     <Compile Include="Database\MyDB.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -107,7 +108,7 @@
     <Compile Include="Models\NhomBenh.cs" />
     <Compile Include="Models\NhomThuoc.cs" />
     <Compile Include="Models\Thuoc.cs" />
-    <Compile Include="Models\XMlSerialization.cs" />
+    <Compile Include="Base\BaiBao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -150,6 +151,7 @@
     <Compile Include="Views\PageTraCuuThuoc.xaml.cs">
       <DependentUpon>PageTraCuuThuoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_Others\CoordinateConverter.cs" />
     <Compile Include="_Others\PageType.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +293,9 @@
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Sqlite">
       <HintPath>..\packages\sqlite-net-wp8.3.8.5\lib\windowsphone8\Sqlite.winmd</HintPath>
