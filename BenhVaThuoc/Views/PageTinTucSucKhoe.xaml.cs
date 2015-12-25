@@ -20,8 +20,13 @@ namespace BenhVaThuoc.Views
         public PageTinTucSucKhoe()
         {
             InitializeComponent();
-            GetFileAsString();
+            Loaded += PageTinTucSucKhoe_Loaded;
 
+        }
+
+        void PageTinTucSucKhoe_Loaded(object sender, RoutedEventArgs e)
+        {
+            GetFileAsString();
         }
 
 
